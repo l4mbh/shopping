@@ -18,6 +18,14 @@
   transition: all .2s;
   margin-bottom: 20px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product_img > img {
+  height: 350px;
+  width: auto;
 }
 
 .product_name {

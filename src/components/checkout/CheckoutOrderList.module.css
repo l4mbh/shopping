@@ -14,6 +14,7 @@
 
 .checkout_orderItemName {
   font-weight: bold;
+  max-width: 50%;
 }
 
 .checkout_orderItemPrice {

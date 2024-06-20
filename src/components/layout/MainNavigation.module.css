@@ -89,6 +89,9 @@
   }
 
   .userInfo {
-    font-size: 10px !important;
+    /* font-size: 10px !important; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }

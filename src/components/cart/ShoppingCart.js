@@ -13,7 +13,7 @@ export default function ShoppingCart() {
       <Container fluid>
       <h3 className={`${classes.cart_title} table`}>Shopping cart</h3>
         <Row>
-          <Col md={8} className="overflow-scroll">
+          <Col md={8}>
             <CartTable/>
           </Col>
           <Col md={4}>

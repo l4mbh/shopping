@@ -3,7 +3,6 @@ import React from "react";
 import classes from "./ProductDetailDesc.module.css";
 
 export default function ProductDetailDesc(props) {
-  // const longDes = description.split("•");
 
   const description = props.description;
 
@@ -14,6 +13,8 @@ export default function ProductDetailDesc(props) {
       detailDesc = description.split("-") || description;
     } else if (description.includes('•')) {
       detailDesc = description.split("•") || description;
+    } else {
+      detailDesc = [description];
     }
     header = detailDesc.shift() || "";
   }

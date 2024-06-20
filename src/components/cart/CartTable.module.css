@@ -4,6 +4,7 @@
   text-transform: uppercase;
 }
 
+
 .cart_table p {
   margin-bottom: 0;
 }
@@ -17,18 +18,20 @@
   font-weight: 400;
 }
 
-
-
 .cart_itemImg {
   width: 7rem;
 }
 
 .cart_itemName {
-  max-width: 15rem;
+  max-width: 8rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   font-weight: bold;
   color: black;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cart_itemRemove {
@@ -90,7 +93,7 @@
   border: 1px solid gray;
   padding: 0.5rem;
   cursor: pointer;
-  transition: all .2s;
+  transition: all 0.2s;
   color: gray !important;
 }
 
@@ -99,7 +102,6 @@
   color: white !important;
   border: 1px solid white;
 }
-
 
 .cart_footerContentRight:hover a {
   color: white !important;
@@ -110,4 +112,3 @@
     overflow: scroll;
   }
 }
-

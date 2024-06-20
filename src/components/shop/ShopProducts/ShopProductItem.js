@@ -11,8 +11,9 @@ export default function ShopProductItem(props) {
     <div className={`${classes.product_item} image-fluid`} onClick={() => {navigate(`/detail/${props.item._id}`)} } >
       <div
         className={classes.product_img}
-        style={{ backgroundImage: `url(${props.item.images[0]})` }}
-      ></div>
+      >
+        <img src={props.item.images[0]} alt={props.item.name} />
+      </div>
       <div className={classes.product_name}>{props.item.name}</div>
       <div className={classes.product_price}>
         {new Intl.NumberFormat("vi-VN", {

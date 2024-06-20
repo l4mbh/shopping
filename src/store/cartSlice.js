@@ -74,7 +74,6 @@ const cartSlice = createSlice({
   initialState: cartState,
   reducers: {
     setCartItems: (state, action) => {
-      console.log(action.payload);
       state.cartItems = action.payload.products;
       state.cartQuant = action.payload.quant;
     }

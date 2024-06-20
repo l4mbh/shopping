@@ -11,7 +11,7 @@ export default function CheckoutOrderList ({items}) {
       {
         items.map(item => {
           return <li className={classes.checkout_orderItem} key={item.product._id}>
-            <p className={classes.checkout_orderItemName}>{item.product.name}</p>
+            <p className={classes.checkout_orderItemName} title={item.product.name}>{item.product.name}</p>
             <p className={classes.checkout_orderItemPrice}>{`${priceFormat(item.product.price)} x ${item.quantity}`}</p>
           </li>
         })

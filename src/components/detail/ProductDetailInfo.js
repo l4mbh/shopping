@@ -17,6 +17,9 @@ export default function ProductDetailInfo({product}) {
               <h6>
                 CATEGORY : <span>{product.category}</span>
               </h6>
+              <h6>
+                IN STOCK : <span>{product.stock}</span>
+              </h6>
             </div>
           </div>
   )

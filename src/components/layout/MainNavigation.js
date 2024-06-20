@@ -3,7 +3,7 @@ import { Link, NavLink, json, useNavigate } from "react-router-dom";
 
 import classes from "./MainNavigation.module.css";
 
-import { Container } from "react-bootstrap";
+import { Container, NavDropdown } from "react-bootstrap";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -84,24 +84,44 @@ export default function MainNavigation() {
           </h1>
         </div>
         <div className="d-flex">
-          <ul className="d-flex">
+          <ul className="d-flex mb-0">
             {isLogin && (
               <li
-                className={`${classes.nav_item} small-sm d-flex align-items-center justify-content-center`}
+                className={`${classes.nav_item} d-flex align-items-center justify-content-center`}
               >
-                <div>
-                  <FontAwesomeIcon
-                    className={classes.link_icon}
-                    icon={faUser}
-                  />
-                  <span className={classes.userInfo}>{userInfo.username}</span>
-                </div>
+                <NavDropdown
+                  id="nav-dropdown-dark"
+                  title={
+                    <span>
+                      <FontAwesomeIcon
+                        className={classes.link_icon}
+                        icon={faUser}
+                      />
+                      <span className={classes.userInfo}>
+                        {userInfo.username}
+                      </span>
+                    </span>
+                  }
+                  menuVariant="light"
+                >
+                  <NavDropdown.Item as={NavLink} to="/order" className={({ isActive }) => (isActive ? `${classes.active}` : undefined)}>Your orders</NavDropdown.Item>
+                  <NavDropdown.Item
+                    onClick={logoutHandler}
+                    className="text-danger"
+                  >
+                    <FontAwesomeIcon
+                      className={classes.link_icon}
+                      icon={faArrowRightFromBracket}
+                    />
+                    Logout
+                  </NavDropdown.Item>
+                </NavDropdown>
               </li>
             )}
             <li
               className={`${classes.nav_item} d-flex align-items-center justify-content-center`}
             >
-              {!isLogin ? (
+              {!isLogin && (
                 <NavLink
                   to="login"
                   className={({ isActive }) =>
@@ -114,14 +134,6 @@ export default function MainNavigation() {
                   />
                   Login
                 </NavLink>
-              ) : (
-                <a className="text-danger" onClick={logoutHandler}>
-                  <FontAwesomeIcon
-                    className={classes.link_icon}
-                    icon={faArrowRightFromBracket}
-                  />
-                  Logout
-                </a>
               )}
             </li>
           </ul>

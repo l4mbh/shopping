@@ -9,7 +9,9 @@ import Login, { action as LoginAction } from "./pages/Login";
 import Register, { action as SignUpAction } from "./pages/Register";
 import Error from "./pages/Error";
 import Logout, { action as LogoutAction } from "./pages/Logout";
+import Order from "./pages/Order";
 import { getAuthorization } from "./utils/auth";
+import OrderDetail from "./components/order/OrderDetail";
 
 function App() {
   const router = createBrowserRouter([
@@ -56,6 +58,14 @@ function App() {
           action: LogoutAction,
           loader: getAuthorization,
         },
+        {
+          path: "order",
+          element: <Order />
+        },
+        {
+          path: "/order/:id",
+          element: <OrderDetail/>
+        }
       ],
     },
   ]);

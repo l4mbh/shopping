@@ -42,6 +42,13 @@
   overflow: auto;
 }
 
+.detailImage_list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .detailImage_showcaseImg {
   height: 25rem;
   width: auto;
@@ -49,5 +56,15 @@
 }
 
 .detailImage_showcaseImg > img {
+  height: 10rem;
+  width: auto;
   object-fit: cover !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .detailImage_showcaseImg {
+    height: 15rem;
+    width: auto;
+    /* object-fit: contain !important; */
+  }
 }

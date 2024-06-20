@@ -19,7 +19,7 @@ export default function ProductDetail({ product, relatedProducts }) {
         </Col>
         <Col>
           <ProductDetailInfo product={product}/>
-          <ProductDetailAction cartItem={product}/>
+          {product.stock && product.stock > 0 ? <ProductDetailAction cartItem={product}/> : <p className="text-danger display-6">Out of stock</p>}
         </Col>
       </Row>
       <ProductDetailDesc description={product.long_desc} />

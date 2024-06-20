@@ -32,10 +32,9 @@ export default function Root() {
           dispatch(userActions.onLogin(data.user));
         }
       } catch (error) {
-        console.log(error.message);
+        console.log(error);
       }
     };
-
     checkLoggedInUser();
   }, []);
 
